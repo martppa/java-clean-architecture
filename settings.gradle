@@ -1,0 +1,2 @@
+include ':app', ':core', ':ui', ':data', ':android'
+include ':ios'
