@@ -1,7 +1,7 @@
 package com.martppa.data.repository;
 
 import com.martppa.core.repository.CountryRepository;
-import com.martppa.data.entities.CountryEntityMapper;
+import com.martppa.data.entities.mappers.CountryEntityMapper;
 import com.martppa.data.repository.datasource.CountryDataSource;
 
 import io.reactivex.Observable;

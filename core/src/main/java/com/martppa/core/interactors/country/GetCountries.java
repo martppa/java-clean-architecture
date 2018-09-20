@@ -1,7 +1,6 @@
 package com.martppa.core.interactors.country;
 
 import com.martppa.core.interactors.ObservableUseCase;
-import com.martppa.core.interactors.UseCase;
 import com.martppa.core.models.Country;
 import com.martppa.core.repository.CountryRepository;
 import com.martppa.core.threading.ExecutionThread;

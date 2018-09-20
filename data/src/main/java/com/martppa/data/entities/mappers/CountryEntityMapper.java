@@ -1,6 +1,7 @@
-package com.martppa.data.entities;
+package com.martppa.data.entities.mappers;
 
 import com.martppa.core.models.Country;
+import com.martppa.data.entities.CountryEntity;
 
 import java.util.ArrayList;
 import java.util.Collection;
