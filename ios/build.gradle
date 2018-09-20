@@ -42,6 +42,7 @@ moe {
 dependencies {
     // Compile with 'jar' files in the project's 'lib' directory
     compile fileTree(dir: 'lib', include: '*.jar')
+    compile project(path: ':ui')
 }
 
 // Setup Eclipse
