@@ -7,11 +7,11 @@ import java.util.concurrent.Executor;
 import io.reactivex.Scheduler;
 import io.reactivex.schedulers.Schedulers;
 
-public class WorkingExecutionThread implements ExecutionThread {
+public class WorkerExecutionThread implements ExecutionThread {
 
     private Executor executor;
 
-    public WorkingExecutionThread(Executor executor) {
+    public WorkerExecutionThread(Executor executor) {
         this.executor = executor;
     }
 

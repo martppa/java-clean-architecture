@@ -1,0 +1,14 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+    xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="CountryModelMapper" class="com.martppa.ui.models.mappers.CountryModelMapper"/>
+
+    <bean id="CountryListPresenterImpl" class="com.martppa.ui.presenter.country.CountryListPresenterImpl">
+        <constructor-arg index="0" ref="GetCountries"/>
+        <constructor-arg index="1" ref="CountryModelMapper"/>
+    </bean>
+
+</beans>

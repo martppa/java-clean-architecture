@@ -6,6 +6,7 @@ import com.martppa.data.repository.datasource.provider.rest.framework.RestFramew
 import com.martppa.data.repository.datasource.provider.rest.response.ResponseAdapter;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class RestCountriesCountryRestApi extends CountryRestApiImpl {
@@ -19,7 +20,7 @@ public class RestCountriesCountryRestApi extends CountryRestApiImpl {
     @Override
     protected ResponseAdapter<Collection<CountryEntity>> requestCountries() {
         try {
-            RestCountriesResponse response = restFramework.executeGet(BASE_URL, COUNTRY_ROUTE, noParameters());
+            RestCountriesResponse response = restFramework.executeGet(RestCountriesResponse.class, BASE_URL, COUNTRY_ROUTE, noParameters());
             if (response == null)
                 throw new IOException("No data from server");
             return new RestCountriesResponseAdapter(response);

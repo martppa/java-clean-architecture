@@ -21,6 +21,7 @@ public class CountryListPresenterImpl implements CountryListPresenter {
         this.countryModelMapper = countryModelMapper;
     }
 
+    @Override
     public void setView(CountryListView view) {
         this.view = view;
     }
