@@ -6,7 +6,12 @@ import com.martppa.data.entities.CountryEntity;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import javax.inject.Inject;
+
 public class CountryEntityMapper {
+
+    @Inject
+    public CountryEntityMapper() {}
 
     public Country transform(CountryEntity countryEntity) {
         return new Country(countryEntity.getName(), countryEntity.getIsoCode(), countryEntity.getFlagImageUrl());

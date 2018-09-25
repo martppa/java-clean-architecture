@@ -7,6 +7,8 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
+import javax.inject.Inject;
+
 import io.reactivex.annotations.NonNull;
 
 public class JobExecutor implements Executor {
@@ -22,6 +24,7 @@ public class JobExecutor implements Executor {
 
     private final ThreadPoolExecutor threadPoolExecutor;
 
+    @Inject
     public JobExecutor() {
         BlockingQueue<Runnable> workQueue = new LinkedBlockingQueue<>();
         ThreadFactory threadFactory = new JobThreadFactory();

@@ -1,13 +1,14 @@
 package com.martppa.core.interactors;
 
-import com.martppa.core.threading.ExecutionThread;
+import com.martppa.core.threading.ObserverThreadExecutor;
+import com.martppa.core.threading.SubscribedThreadExecutor;
 
 import io.reactivex.Completable;
 import io.reactivex.observers.DisposableCompletableObserver;
 
 public abstract class CompletableUseCase<Params> extends UseCase {
 
-    public CompletableUseCase(ExecutionThread executionThread, ExecutionThread uiExecutionThread) {
+    public CompletableUseCase(SubscribedThreadExecutor executionThread, ObserverThreadExecutor uiExecutionThread) {
         super(executionThread, uiExecutionThread);
     }
 

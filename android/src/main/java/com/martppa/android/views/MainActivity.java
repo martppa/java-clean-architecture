@@ -1,30 +1,42 @@
-package com.martppa.android;
+package com.martppa.android.views;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.martppa.di.Injector;
+import com.martppa.android.R;
+import com.martppa.android.di.component.DaggerMainComponent;
+import com.martppa.android.di.component.MainComponent;
+import com.martppa.android.di.module.MainModule;
 import com.martppa.ui.models.CountryModel;
 import com.martppa.ui.presenter.country.CountryListPresenter;
 import com.martppa.ui.view.CountryListView;
 
 import java.util.Collection;
 
+import javax.inject.Inject;
+
 public class MainActivity extends AppCompatActivity implements CountryListView {
-    private CountryListPresenter countryListPresenter;
+    @Inject CountryListPresenter countryListPresenter;
+
+    private MainComponent mainComponent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        injectPresenter();
+        createInjector();
+        injectDependencies();
         initPresenter();
         requestCountries();
     }
 
-    private void injectPresenter() {
-        countryListPresenter = Injector.getInstance().inject(countryListPresenter.getClass());
+    private void createInjector() {
+        mainComponent = DaggerMainComponent.builder().mainModule(new MainModule(this)).build();
+    }
+
+    private void injectDependencies() {
+        mainComponent.inject(this);
     }
 
     private void initPresenter() {

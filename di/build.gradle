@@ -2,10 +2,6 @@ apply plugin: 'java-library'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
-    implementation 'org.springframework:spring-core:5.0.9.RELEASE'
-    implementation 'org.springframework:spring-beans:5.0.9.RELEASE'
-    implementation 'org.springframework:spring-context:5.0.9.RELEASE'
 }
 
 sourceCompatibility = "1.8"

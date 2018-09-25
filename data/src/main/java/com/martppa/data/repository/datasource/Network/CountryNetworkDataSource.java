@@ -6,11 +6,14 @@ import com.martppa.data.repository.datasource.provider.CountryProvider;
 
 import java.util.Collection;
 
+import javax.inject.Inject;
+
 import io.reactivex.Observable;
 
 public class CountryNetworkDataSource implements CountryDataSource {
     private CountryProvider countryProvider;
 
+    @Inject
     public CountryNetworkDataSource(CountryProvider countryProvider) {
         this.countryProvider = countryProvider;
     }

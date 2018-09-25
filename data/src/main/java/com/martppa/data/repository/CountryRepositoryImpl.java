@@ -5,12 +5,15 @@ import com.martppa.data.entities.mappers.CountryEntityMapper;
 import com.martppa.data.repository.datasource.CountryDataSource;
 import com.martppa.data.repository.datasource.Factory.CountryDataSourceSimpleFactory;
 
+import javax.inject.Inject;
+
 import io.reactivex.Observable;
 
 public class CountryRepositoryImpl implements CountryRepository {
     private CountryEntityMapper countryEntityMapper;
     private CountryDataSourceSimpleFactory countryDataSourceSimpleFactory;
 
+    @Inject
     public CountryRepositoryImpl(CountryEntityMapper countryEntityMapper,
                                  CountryDataSourceSimpleFactory countryDataSourceSimpleFactory) {
         this.countryEntityMapper = countryEntityMapper;

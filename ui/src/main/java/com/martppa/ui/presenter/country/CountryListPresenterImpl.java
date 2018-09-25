@@ -2,12 +2,12 @@ package com.martppa.ui.presenter.country;
 
 import com.martppa.core.interactors.country.GetCountries;
 import com.martppa.core.models.Country;
-import com.martppa.ui.models.CountryModel;
 import com.martppa.ui.models.mappers.CountryModelMapper;
 import com.martppa.ui.view.CountryListView;
-import com.martppa.ui.view.View;
 
 import java.util.Collection;
+
+import javax.inject.Inject;
 
 import io.reactivex.observers.DisposableObserver;
 
@@ -16,6 +16,7 @@ public class CountryListPresenterImpl implements CountryListPresenter {
     private GetCountries getCountries;
     private CountryModelMapper countryModelMapper;
 
+    @Inject
     public CountryListPresenterImpl(GetCountries getCountries, CountryModelMapper countryModelMapper) {
         this.getCountries = getCountries;
         this.countryModelMapper = countryModelMapper;

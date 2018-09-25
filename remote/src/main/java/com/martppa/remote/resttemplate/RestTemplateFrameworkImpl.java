@@ -2,13 +2,15 @@ package com.martppa.remote.resttemplate;
 
 import com.martppa.data.repository.datasource.provider.rest.framework.RestFramework;
 
-import org.springframework.web.client.RestTemplate;
-
 import java.util.Map;
 
+import javax.inject.Inject;
+
 public class RestTemplateFrameworkImpl implements RestFramework {
+
     private RestTemplate restTemplate;
 
+    @Inject
     public RestTemplateFrameworkImpl() {
         restTemplate = new RestTemplate();
     }

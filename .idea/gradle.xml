@@ -9,12 +9,11 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/android" />
-            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/android_data" />
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/data" />
             <option value="$PROJECT_DIR$/di" />
             <option value="$PROJECT_DIR$/ios" />
-            <option value="$PROJECT_DIR$/remote" />
             <option value="$PROJECT_DIR$/ui" />
           </set>
         </option>

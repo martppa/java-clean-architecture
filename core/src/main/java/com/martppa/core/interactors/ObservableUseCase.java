@@ -1,13 +1,14 @@
 package com.martppa.core.interactors;
 
-import com.martppa.core.threading.ExecutionThread;
+import com.martppa.core.threading.ObserverThreadExecutor;
+import com.martppa.core.threading.SubscribedThreadExecutor;
 
 import io.reactivex.Observable;
 import io.reactivex.observers.DisposableObserver;
 
 public abstract class ObservableUseCase<T, Params> extends UseCase {
 
-    public ObservableUseCase(ExecutionThread executionThread, ExecutionThread uiExecutionThread) {
+    public ObservableUseCase(SubscribedThreadExecutor executionThread, ObserverThreadExecutor uiExecutionThread) {
         super(executionThread, uiExecutionThread);
     }
 

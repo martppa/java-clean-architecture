@@ -9,11 +9,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import javax.inject.Inject;
+
 public class RestCountriesCountryRestApi extends CountryRestApiImpl {
     private final String BASE_URL = "https://restcountries.eu/";
     private final String COUNTRY_ROUTE = "rest/v2/all";
 
-    protected RestCountriesCountryRestApi(RestFramework restFramework) {
+    @Inject
+    public RestCountriesCountryRestApi(RestFramework restFramework) {
         super(restFramework);
     }
 
