@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>MOE.Main.Class</key>
-	<string>com.martppa.javacleanway.ios.Main</string>
+	<string>com.martppa.java_clean_way.iosapp.Main</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

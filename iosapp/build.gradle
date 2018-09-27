@@ -28,21 +28,20 @@ test { exclude '**' }
 // Setup Multi-OS Engine
 moe {
     xcode {
-        project 'xcode/ios.xcodeproj'
-        mainTarget 'ios'
-        testTarget 'ios-Test'
+        project 'xcode/iosapp.xcodeproj'
+        mainTarget 'iosapp'
+        testTarget 'iosapp-Test'
 
         // Uncomment and change these settings if you are working with a Xcode workspace
-        // workspace 'xcode/ios.xcworkspace'
-        // mainScheme 'ios'
-        // testScheme 'ios-Test'
+        // workspace 'xcode/iosapp.xcworkspace'
+        // mainScheme 'iosapp'
+        // testScheme 'iosapp-Test'
     }
 }
 
 dependencies {
     // Compile with 'jar' files in the project's 'lib' directory
     compile fileTree(dir: 'lib', include: '*.jar')
-    compile project(path: ':ui')
 }
 
 // Setup Eclipse

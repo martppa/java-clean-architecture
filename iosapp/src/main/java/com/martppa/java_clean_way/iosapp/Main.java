@@ -1,4 +1,4 @@
-package com.martppa.java_clean_way.ios;
+package com.martppa.java_clean_way.iosapp;
 
 import apple.NSObject;
 import apple.foundation.NSDictionary;

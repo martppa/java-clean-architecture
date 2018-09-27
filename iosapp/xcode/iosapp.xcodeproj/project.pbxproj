@@ -7,23 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0AA18B94DC261014924EDDBF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07A9EB36D8302069B5955C1C /* main.cpp */; };
 		58C6F5321DA66CB600309CB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58C6F5301DA66CB600309CB6 /* Main.storyboard */; };
 		58C6F5341DA66CB600309CB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58C6F5331DA66CB600309CB6 /* Assets.xcassets */; };
 		58C6F5371DA66CB600309CB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58C6F5351DA66CB600309CB6 /* LaunchScreen.storyboard */; };
-		665120F924165E7686239B3A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8166A1F597C81BC6FD250E51 /* main.cpp */; };
-		A9AE8601CD5725D9F133ED19 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 56077DD2ADDBCB0F534674EC /* main.cpp */; };
+		C55C1197AE2E144E716DEDFB /* moe-main-interfaces.m in Sources */ = {isa = PBXBuildFile; fileRef = 122510C384D2965859D2B2B5 /* moe-main-interfaces.m */; };
+		DB93BE400EB741D24E3C25D7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B811CC9C1F53D9CC9C973FE /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		56077DD2ADDBCB0F534674EC /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		5863B87B1DA682C800E46B6A /* ios-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		07A9EB36D8302069B5955C1C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		122510C384D2965859D2B2B5 /* moe-main-interfaces.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "moe-main-interfaces.m"; path = "../build/moe/main/ui-headers/moe-main-interfaces.m"; sourceTree = "<group>"; };
+		1B811CC9C1F53D9CC9C973FE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		5863B87B1DA682C800E46B6A /* iosapp-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iosapp-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5863B88E1DA682C800E46B6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		58C6F5241DA66CB600309CB6 /* ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		58C6F5241DA66CB600309CB6 /* iosapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58C6F5311DA66CB600309CB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		58C6F5331DA66CB600309CB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58C6F5361DA66CB600309CB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58C6F5381DA66CB600309CB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8166A1F597C81BC6FD250E51 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,19 +46,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5863B87C1DA682C800E46B6A /* ios-Test */ = {
+		5863B87C1DA682C800E46B6A /* iosapp-Test */ = {
 			isa = PBXGroup;
 			children = (
 				5863B88E1DA682C800E46B6A /* Info.plist */,
 				5863B87D1DA682C800E46B6A /* Supporting Files */,
 			);
-			path = "ios-Test";
+			path = "iosapp-Test";
 			sourceTree = "<group>";
 		};
 		5863B87D1DA682C800E46B6A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				56077DD2ADDBCB0F534674EC /* main.cpp */,
+				07A9EB36D8302069B5955C1C /* main.cpp */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -64,22 +66,23 @@
 		58C6F51B1DA66CB600309CB6 = {
 			isa = PBXGroup;
 			children = (
-				58C6F5261DA66CB600309CB6 /* ios */,
-				5863B87C1DA682C800E46B6A /* ios-Test */,
+				58C6F5261DA66CB600309CB6 /* iosapp */,
+				5863B87C1DA682C800E46B6A /* iosapp-Test */,
 				58C6F5251DA66CB600309CB6 /* Products */,
+				D1E61B32F60210C5EEE4A252 /* Multi-OS Engine */,
 			);
 			sourceTree = "<group>";
 		};
 		58C6F5251DA66CB600309CB6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				58C6F5241DA66CB600309CB6 /* ios.app */,
-				5863B87B1DA682C800E46B6A /* ios-Test.app */,
+				58C6F5241DA66CB600309CB6 /* iosapp.app */,
+				5863B87B1DA682C800E46B6A /* iosapp-Test.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		58C6F5261DA66CB600309CB6 /* ios */ = {
+		58C6F5261DA66CB600309CB6 /* iosapp */ = {
 			isa = PBXGroup;
 			children = (
 				58C6F5301DA66CB600309CB6 /* Main.storyboard */,
@@ -88,25 +91,33 @@
 				58C6F5381DA66CB600309CB6 /* Info.plist */,
 				58C6F5271DA66CB600309CB6 /* Supporting Files */,
 			);
-			path = ios;
+			path = iosapp;
 			sourceTree = "<group>";
 		};
 		58C6F5271DA66CB600309CB6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8166A1F597C81BC6FD250E51 /* main.cpp */,
+				1B811CC9C1F53D9CC9C973FE /* main.cpp */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D1E61B32F60210C5EEE4A252 /* Multi-OS Engine */ = {
+			isa = PBXGroup;
+			name = "Multi-OS Engine";
+			sourceTree = "<group>";
+			children = (
+				122510C384D2965859D2B2B5 /* moe-main-interfaces.m */,
+			);
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5863B87A1DA682C800E46B6A /* ios-Test */ = {
+		5863B87A1DA682C800E46B6A /* iosapp-Test */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5863B88F1DA682C800E46B6A /* Build configuration list for PBXNativeTarget "ios-Test" */;
+			buildConfigurationList = 5863B88F1DA682C800E46B6A /* Build configuration list for PBXNativeTarget "iosapp-Test" */;
 			buildPhases = (
-				7A2F5BB17E73C7FD03683D2A /* Compile Sources (MOE) */,
+				809F99A86331D31AE3783CA7 /* Compile Sources (MOE) */,
 				5863B8771DA682C800E46B6A /* Sources */,
 				5863B8781DA682C800E46B6A /* Frameworks */,
 				5863B8791DA682C800E46B6A /* Resources */,
@@ -115,16 +126,16 @@
 			);
 			dependencies = (
 			);
-			name = "ios-Test";
-			productName = "ios-Test";
-			productReference = 5863B87B1DA682C800E46B6A /* ios-Test.app */;
+			name = "iosapp-Test";
+			productName = "iosapp-Test";
+			productReference = 5863B87B1DA682C800E46B6A /* iosapp-Test.app */;
 			productType = "com.apple.product-type.application";
 		};
-		58C6F5231DA66CB600309CB6 /* ios */ = {
+		58C6F5231DA66CB600309CB6 /* iosapp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 58C6F53B1DA66CB600309CB6 /* Build configuration list for PBXNativeTarget "ios" */;
+			buildConfigurationList = 58C6F53B1DA66CB600309CB6 /* Build configuration list for PBXNativeTarget "iosapp" */;
 			buildPhases = (
-				0E67F649910115D091E9DB4C /* Compile Sources (MOE) */,
+				2A985453C8D73AC6F1FEF5DB /* Compile Sources (MOE) */,
 				58C6F5201DA66CB600309CB6 /* Sources */,
 				58C6F5211DA66CB600309CB6 /* Frameworks */,
 				58C6F5221DA66CB600309CB6 /* Resources */,
@@ -133,9 +144,9 @@
 			);
 			dependencies = (
 			);
-			name = ios;
-			productName = ios;
-			productReference = 58C6F5241DA66CB600309CB6 /* ios.app */;
+			name = iosapp;
+			productName = iosapp;
+			productReference = 58C6F5241DA66CB600309CB6 /* iosapp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -145,7 +156,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0730;
-				ORGANIZATIONNAME = Martppa;
+				ORGANIZATIONNAME = MartppaSoft;
 				TargetAttributes = {
 					5863B87A1DA682C800E46B6A = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -155,7 +166,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 58C6F51F1DA66CB600309CB6 /* Build configuration list for PBXProject "ios" */;
+			buildConfigurationList = 58C6F51F1DA66CB600309CB6 /* Build configuration list for PBXProject "iosapp" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -168,8 +179,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				58C6F5231DA66CB600309CB6 /* ios */,
-				5863B87A1DA682C800E46B6A /* ios-Test */,
+				58C6F5231DA66CB600309CB6 /* iosapp */,
+				5863B87A1DA682C800E46B6A /* iosapp-Test */,
 			);
 		};
 /* End PBXProject section */
@@ -195,7 +206,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0E67F649910115D091E9DB4C /* Compile Sources (MOE) */ = {
+		2A985453C8D73AC6F1FEF5DB /* Compile Sources (MOE) */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,7 +220,7 @@
 			shellPath = /bin/bash;
 			shellScript = "set -e\n\nexport MOE_BUILD_SOURCE_SET=\"main\"\n\n# Check project directory\nif [ ! -d \"$MOE_PROJECT_DIR\" ]; then\n    echo \"$0:$LINENO:1: error: 'MOE_PROJECT_DIR' doesn't point to a directory!\"; exit 1;\nfi\ncd \"$MOE_PROJECT_DIR\"\n\n# Export JAVA_HOME\nexport JAVA_HOME=$(/usr/libexec/java_home -v 1.8)\n\n# Utility function for finding the Gradle implementation\nfunction findGradle {\n    CD=\"$PWD\"\n    while [ \"$CD\" != \"\" ]; do\n        echo \"Looking for gradlew in $CD\"\n        if [ -x \"$CD/gradlew\" ]; then\n            GRADLE_EXEC=$CD/gradlew\n            return 0\n        fi\n        CD=\"${CD%/*}\"\n    done\n\n    echo \"Checking with 'which'\"\n    GRADLE_EXEC=$(which 'gradle')\n\n    if [ \"$GRADLE_EXEC\" = \"\" ]; then\n        echo \"Failed to locate 'gradle' executable!\"\n        exit 1\n    fi\n}\n\n# Build project with Gradle\nif [ -z \"$MOE_GRADLE_EXTERNAL_BUILD\" ]; then\n    findGradle\n    \"$GRADLE_EXEC\" --no-daemon moeXcodeInternal -s\nfi\n\n# Check output directory\nif [ ! -d \"${MOE_PROJECT_BUILD_DIR}\" ]; then\n    echo \"$0:$LINENO:1: error: 'MOE_PROJECT_BUILD_DIR' doesn't point to a directory!\"; exit 1;\nfi\n\n# Copy some resources\nmkdir -p \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}\"\ncp \"${MOE_PROJECT_BUILD_DIR}/moe/${MOE_BUILD_SOURCE_SET}/application.jar\" \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\ncp \"${MOE_PROJECT_BUILD_DIR}/moe/${MOE_BUILD_SOURCE_SET}/preregister.txt\" \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\nif [ \"${MOE_BUILD_SOURCE_SET}\" == \"test\" ]; then\n    cp \"${MOE_PROJECT_BUILD_DIR}/moe/${MOE_BUILD_SOURCE_SET}/classlist.txt\" \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\nfi\n\n# Copy android CA certificates on demand\nif [ \"${MOE_COPY_ANDROID_CACERTS}\" == \"YES\" ]; then\n    rm -rf \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/android_root/etc/security/cacerts\"\n    mkdir -p \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/android_root/etc/security/cacerts\"\n    unzip \"${MOE_SDK_PATH}/sdk/moe-core-certificates.zip\" -d \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/android_root/etc/security/cacerts\"\nfi\n\n# Copy and sign MOE framework\nrsync -av --filter \"- CVS/\" --filter \"- .svn/\" --filter \"- .git/\" --filter \"- .hg/\" --filter \"- Headers\" --filter \"- PrivateHeaders\" --filter \"- Modules\" \\\n    \"${MOE_FRAMEWORK_PATH}/MOE.framework\" \"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/\"\nif [ \"${VALID_ARCHS}\" == \"arm64\" ] || [ \"${VALID_ARCHS}\" == \"x86_64\" ]; then\n    if [ \"${PLATFORM_NAME}\" == \"iphonesimulator\" ]; then\n        lipo -thin x86_64 -output \"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MOE.framework/MOE\" \"${MOE_FRAMEWORK_PATH}/MOE.framework/MOE\"\n    else\n        lipo -thin arm64 -output \"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MOE.framework/MOE\" \"${MOE_FRAMEWORK_PATH}/MOE.framework/MOE\"\n    fi\nfi\nif [ -n \"${EXPANDED_CODE_SIGN_IDENTITY}\" -a \"${CODE_SIGNING_REQUIRED}\" != \"NO\" -a \"${CODE_SIGNING_ALLOWED}\" != \"NO\" ]; then\n    /usr/bin/codesign --force --sign $EXPANDED_CODE_SIGN_IDENTITY $OTHER_CODE_SIGN_FLAGS \\\n        --preserve-metadata=identifier,entitlements \"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MOE.framework\"\nfi\n";
 		};
-		7A2F5BB17E73C7FD03683D2A /* Compile Sources (MOE) */ = {
+		809F99A86331D31AE3783CA7 /* Compile Sources (MOE) */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,7 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9AE8601CD5725D9F133ED19 /* main.cpp in Sources */,
+				0AA18B94DC261014924EDDBF /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,7 +249,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				665120F924165E7686239B3A /* main.cpp in Sources */,
+				DB93BE400EB741D24E3C25D7 /* main.cpp in Sources */,
+				C55C1197AE2E144E716DEDFB /* moe-main-interfaces.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,7 +286,7 @@
 					"$(inherited)",
 					"${MOE_FRAMEWORK_PATH}",
 				);
-				INFOPLIST_FILE = "ios-Test/Info.plist";
+				INFOPLIST_FILE = "iosapp-Test/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MOE_COPY_ANDROID_CACERTS = NO;
 				MOE_FRAMEWORK_PATH = "${MOE_SDK_PATH}/sdk/${PLATFORM_NAME}";
@@ -293,7 +305,7 @@
 					"$(inherited)",
 					"${MOE_OTHER_LDFLAGS}",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "martppa.ios-Test";
+				PRODUCT_BUNDLE_IDENTIFIER = "martppa.iosapp-Test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_STYLE = "non-global";
 			};
@@ -309,7 +321,7 @@
 					"$(inherited)",
 					"${MOE_FRAMEWORK_PATH}",
 				);
-				INFOPLIST_FILE = "ios-Test/Info.plist";
+				INFOPLIST_FILE = "iosapp-Test/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MOE_COPY_ANDROID_CACERTS = NO;
 				MOE_FRAMEWORK_PATH = "${MOE_SDK_PATH}/sdk/${PLATFORM_NAME}";
@@ -328,7 +340,7 @@
 					"$(inherited)",
 					"${MOE_OTHER_LDFLAGS}",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "martppa.ios-Test";
+				PRODUCT_BUNDLE_IDENTIFIER = "martppa.iosapp-Test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_STYLE = "non-global";
 			};
@@ -430,7 +442,7 @@
 					"$(inherited)",
 					"${MOE_FRAMEWORK_PATH}",
 				);
-				INFOPLIST_FILE = ios/Info.plist;
+				INFOPLIST_FILE = iosapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MOE_COPY_ANDROID_CACERTS = NO;
 				MOE_FRAMEWORK_PATH = "${MOE_SDK_PATH}/sdk/${PLATFORM_NAME}";
@@ -449,7 +461,7 @@
 					"$(inherited)",
 					"${MOE_OTHER_LDFLAGS}",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = martppa.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = martppa.iosapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_STYLE = "non-global";
 			};
@@ -465,7 +477,7 @@
 					"$(inherited)",
 					"${MOE_FRAMEWORK_PATH}",
 				);
-				INFOPLIST_FILE = ios/Info.plist;
+				INFOPLIST_FILE = iosapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MOE_COPY_ANDROID_CACERTS = NO;
 				MOE_FRAMEWORK_PATH = "${MOE_SDK_PATH}/sdk/${PLATFORM_NAME}";
@@ -484,7 +496,7 @@
 					"$(inherited)",
 					"${MOE_OTHER_LDFLAGS}",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = martppa.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = martppa.iosapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_STYLE = "non-global";
 			};
@@ -493,7 +505,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5863B88F1DA682C800E46B6A /* Build configuration list for PBXNativeTarget "ios-Test" */ = {
+		5863B88F1DA682C800E46B6A /* Build configuration list for PBXNativeTarget "iosapp-Test" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5863B8901DA682C800E46B6A /* Debug */,
@@ -502,7 +514,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		58C6F51F1DA66CB600309CB6 /* Build configuration list for PBXProject "ios" */ = {
+		58C6F51F1DA66CB600309CB6 /* Build configuration list for PBXProject "iosapp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				58C6F5391DA66CB600309CB6 /* Debug */,
@@ -511,7 +523,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		58C6F53B1DA66CB600309CB6 /* Build configuration list for PBXNativeTarget "ios" */ = {
+		58C6F53B1DA66CB600309CB6 /* Build configuration list for PBXNativeTarget "iosapp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				58C6F53C1DA66CB600309CB6 /* Debug */,
