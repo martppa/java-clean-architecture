@@ -1,6 +1,9 @@
 package com.martppa.java_clean_way.iosapp.views;
 
 
+import com.martppa.java_clean_way.ui.models.CountryModel;
+import com.martppa.java_clean_way.ui.view.CountryListView;
+
 import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSBundle;
@@ -29,10 +32,12 @@ import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+import java.util.Collection;
+
 @Runtime(ObjCRuntime.class)
 @ObjCClassName("CountryListViewController")
 @RegisterOnStartup
-public class CountryListViewController extends UIViewController {
+public class CountryListViewController extends UIViewController implements CountryListView {
 	static {
 		NatJ.register();
 	}
@@ -188,4 +193,24 @@ public class CountryListViewController extends UIViewController {
 	@Selector("version")
 	@NInt
 	public static native long version_static();
+
+	@Override
+	public void renderCountries(Collection<CountryModel> countries) {
+
+	}
+
+	@Override
+	public void showInfoMessage(String message) {
+
+	}
+
+	@Override
+	public void showWarningMessage(String message) {
+
+	}
+
+	@Override
+	public void showErrorMessage(String message) {
+
+	}
 }

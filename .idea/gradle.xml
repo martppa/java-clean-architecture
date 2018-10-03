@@ -45,6 +45,7 @@
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/data" />
             <option value="$PROJECT_DIR$/iosapp" />
+            <option value="$PROJECT_DIR$/iosapp_data" />
             <option value="$PROJECT_DIR$/ui" />
           </set>
         </option>

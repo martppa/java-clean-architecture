@@ -41,7 +41,11 @@ moe {
 
 dependencies {
     // Compile with 'jar' files in the project's 'lib' directory
-    compile fileTree(dir: 'lib', include: '*.jar')
+    compile fileTree(include: '*.jar', dir: 'lib')
+    implementation project(':core')
+    implementation project(':data')
+    implementation project(':ui')
+    implementation project(':iosapp_data')
 }
 
 // Setup Eclipse
