@@ -1,7 +1,11 @@
 package com.martppa.java_clean_way.iosapp.views;
 
 
+import com.martppa.java_clean_way.iosapp.di.component.DaggerMainComponent;
+import com.martppa.java_clean_way.iosapp.di.component.MainComponent;
+import com.martppa.java_clean_way.iosapp.di.module.MainModule;
 import com.martppa.java_clean_way.ui.models.CountryModel;
+import com.martppa.java_clean_way.ui.presenter.country.CountryListPresenter;
 import com.martppa.java_clean_way.ui.view.CountryListView;
 
 import apple.NSObject;
@@ -34,10 +38,17 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 import java.util.Collection;
 
+import javax.inject.Inject;
+
 @Runtime(ObjCRuntime.class)
 @ObjCClassName("CountryListViewController")
 @RegisterOnStartup
 public class CountryListViewController extends UIViewController implements CountryListView {
+	private MainComponent mainComponent;
+
+	@Inject
+	CountryListPresenter countryListPresenter;
+
 	static {
 		NatJ.register();
 	}
@@ -50,6 +61,11 @@ public class CountryListViewController extends UIViewController implements Count
 	@Override
 	public void viewDidLoad() {
 		super.viewDidLoad();
+
+		createInjector();
+		injectDependencies();
+		initPresenter();
+		requestCountries();
 	}
 
 	@Generated
@@ -194,9 +210,26 @@ public class CountryListViewController extends UIViewController implements Count
 	@NInt
 	public static native long version_static();
 
+	private void createInjector() {
+		mainComponent = DaggerMainComponent.builder().mainModule(new MainModule()).build();
+	}
+
+	private void injectDependencies() {
+		mainComponent.inject(this);
+	}
+
+	private void initPresenter() {
+		countryListPresenter.setView(this);
+		countryListPresenter.init();
+	}
+
+	private void requestCountries() {
+		countryListPresenter.requestCountries();
+	}
+
 	@Override
 	public void renderCountries(Collection<CountryModel> countries) {
-
+		System.out.print("");
 	}
 
 	@Override
@@ -211,6 +244,6 @@ public class CountryListViewController extends UIViewController implements Count
 
 	@Override
 	public void showErrorMessage(String message) {
-
+		System.out.print("");
 	}
 }
