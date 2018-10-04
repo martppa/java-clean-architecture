@@ -10,7 +10,8 @@
 		0AA18B94DC261014924EDDBF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 07A9EB36D8302069B5955C1C /* main.cpp */; };
 		58C6F5341DA66CB600309CB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58C6F5331DA66CB600309CB6 /* Assets.xcassets */; };
 		58C6F5371DA66CB600309CB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58C6F5351DA66CB600309CB6 /* LaunchScreen.storyboard */; };
-		65453F102164B66D001E231E /* CountryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65453F0F2164B66D001E231E /* CountryListViewController.m */; };
+		650428172166537F00A847F7 /* CountryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 650428152166537F00A847F7 /* CountryTableViewController.m */; };
+		650428182166537F00A847F7 /* CountryTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 650428162166537F00A847F7 /* CountryTableViewController.xib */; };
 		65453F122164B67A001E231E /* CountryList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65453F112164B67A001E231E /* CountryList.storyboard */; };
 		C55C1197AE2E144E716DEDFB /* moe-main-interfaces.m in Sources */ = {isa = PBXBuildFile; fileRef = 122510C384D2965859D2B2B5 /* moe-main-interfaces.m */; };
 		DB93BE400EB741D24E3C25D7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B811CC9C1F53D9CC9C973FE /* main.cpp */; };
@@ -26,8 +27,9 @@
 		58C6F5331DA66CB600309CB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58C6F5361DA66CB600309CB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58C6F5381DA66CB600309CB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		65453F0E2164B66D001E231E /* CountryListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountryListViewController.h; sourceTree = "<group>"; };
-		65453F0F2164B66D001E231E /* CountryListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountryListViewController.m; sourceTree = "<group>"; };
+		650428142166537F00A847F7 /* CountryTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountryTableViewController.h; sourceTree = "<group>"; };
+		650428152166537F00A847F7 /* CountryTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountryTableViewController.m; sourceTree = "<group>"; };
+		650428162166537F00A847F7 /* CountryTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryTableViewController.xib; sourceTree = "<group>"; };
 		65453F112164B67A001E231E /* CountryList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CountryList.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,9 +94,10 @@
 				58C6F5351DA66CB600309CB6 /* LaunchScreen.storyboard */,
 				58C6F5381DA66CB600309CB6 /* Info.plist */,
 				58C6F5271DA66CB600309CB6 /* Supporting Files */,
-				65453F0E2164B66D001E231E /* CountryListViewController.h */,
-				65453F0F2164B66D001E231E /* CountryListViewController.m */,
 				65453F112164B67A001E231E /* CountryList.storyboard */,
+				650428142166537F00A847F7 /* CountryTableViewController.h */,
+				650428152166537F00A847F7 /* CountryTableViewController.m */,
+				650428162166537F00A847F7 /* CountryTableViewController.xib */,
 			);
 			path = iosapp;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 			files = (
 				58C6F5371DA66CB600309CB6 /* LaunchScreen.storyboard in Resources */,
 				65453F122164B67A001E231E /* CountryList.storyboard in Resources */,
+				650428182166537F00A847F7 /* CountryTableViewController.xib in Resources */,
 				58C6F5341DA66CB600309CB6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,7 +260,7 @@
 			files = (
 				DB93BE400EB741D24E3C25D7 /* main.cpp in Sources */,
 				C55C1197AE2E144E716DEDFB /* moe-main-interfaces.m in Sources */,
-				65453F102164B66D001E231E /* CountryListViewController.m in Sources */,
+				650428172166537F00A847F7 /* CountryTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

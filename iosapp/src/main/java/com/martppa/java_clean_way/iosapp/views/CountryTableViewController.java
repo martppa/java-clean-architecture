@@ -12,10 +12,14 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSBundle;
 import apple.foundation.NSCoder;
+import apple.foundation.NSIndexPath;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
 import apple.uikit.UITableView;
-import apple.uikit.UIViewController;
+import apple.uikit.UITableViewCell;
+import apple.uikit.UITableViewController;
+import apple.uikit.protocol.UITableViewDataSource;
+
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -36,27 +40,24 @@ import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import javax.inject.Inject;
 
 @Runtime(ObjCRuntime.class)
-@ObjCClassName("CountryListViewController")
+@ObjCClassName("CountryTableViewController")
 @RegisterOnStartup
-public class CountryListViewController extends UIViewController implements CountryListView {
-	private MainComponent mainComponent;
-
-	@Inject
-	CountryListPresenter countryListPresenter;
-
+public class CountryTableViewController extends UITableViewController implements CountryListView {
 	static {
 		NatJ.register();
 	}
 
-	@Generated
-	protected CountryListViewController(Pointer peer) {
-		super(peer);
-	}
+	private MainComponent mainComponent;
+
+	@Inject
+	CountryListPresenter countryListPresenter;
 
 	@Override
 	public void viewDidLoad() {
@@ -69,13 +70,18 @@ public class CountryListViewController extends UIViewController implements Count
 	}
 
 	@Generated
+	protected CountryTableViewController(Pointer peer) {
+		super(peer);
+	}
+
+	@Generated
 	@Selector("accessInstanceVariablesDirectly")
 	public static native boolean accessInstanceVariablesDirectly();
 
 	@Generated
 	@Owned
 	@Selector("alloc")
-	public static native CountryListViewController alloc();
+	public static native CountryTableViewController alloc();
 
 	@Generated
 	@Selector("allocWithZone:")
@@ -132,16 +138,20 @@ public class CountryListViewController extends UIViewController implements Count
 
 	@Generated
 	@Selector("init")
-	public native CountryListViewController init();
+	public native CountryTableViewController init();
 
 	@Generated
 	@Selector("initWithCoder:")
-	public native CountryListViewController initWithCoder(NSCoder aDecoder);
+	public native CountryTableViewController initWithCoder(NSCoder aDecoder);
 
 	@Generated
 	@Selector("initWithNibName:bundle:")
-	public native CountryListViewController initWithNibNameBundle(
+	public native CountryTableViewController initWithNibNameBundle(
 			String nibNameOrNil, NSBundle nibBundleOrNil);
+
+	@Generated
+	@Selector("initWithStyle:")
+	public native CountryTableViewController initWithStyle(@NInt long style);
 
 	@Generated
 	@Selector("instanceMethodForSelector:")
@@ -183,19 +193,7 @@ public class CountryListViewController extends UIViewController implements Count
 
 	@Generated
 	@Selector("setCountryTableView:")
-	public native void setCountryTableView_unsafe(UITableView value);
-
-	@Generated
-	public void setCountryTableView(UITableView value) {
-		Object __old = countryTableView();
-		if (value != null) {
-			org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-		}
-		setCountryTableView_unsafe(value);
-		if (__old != null) {
-			org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-		}
-	}
+	public native void setCountryTableView(UITableView value);
 
 	@Generated
 	@Selector("setVersion:")
@@ -229,7 +227,8 @@ public class CountryListViewController extends UIViewController implements Count
 
 	@Override
 	public void renderCountries(Collection<CountryModel> countries) {
-		System.out.print("");
+		countryTableView().setDataSource(new CountryTableViewSource(new ArrayList<>(countries)));
+		countryTableView().reloadData();
 	}
 
 	@Override
@@ -242,8 +241,36 @@ public class CountryListViewController extends UIViewController implements Count
 
 	}
 
+	private void showMessage() {
+
+	}
+
 	@Override
 	public void showErrorMessage(String message) {
 		System.out.print("");
+	}
+
+	class CountryTableViewSource implements UITableViewDataSource {
+
+		private List<CountryModel> countries;
+		private String cellIdentifier = "countryItemCell";
+
+		public CountryTableViewSource(List<CountryModel> countries) {
+			this.countries = countries;
+		}
+
+		@Override
+		public UITableViewCell tableViewCellForRowAtIndexPath(UITableView tableView, NSIndexPath indexPath) {
+			UITableViewCell uiTableViewCell = tableView.dequeueReusableCellWithIdentifierForIndexPath(cellIdentifier, indexPath);
+			CountryModel countryModel = countries.get((int) indexPath.row());
+			String item = countryModel.getName() + " - " + countryModel.getIsoCode();
+			uiTableViewCell.textLabel().setText(item);
+			return uiTableViewCell;
+		}
+
+		@Override
+		public long tableViewNumberOfRowsInSection(UITableView tableView, long section) {
+			return countries.size();
+		}
 	}
 }
