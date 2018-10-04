@@ -7,6 +7,7 @@ import com.martppa.java_clean_way.data.repository.datasource.provider.rest.respo
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 
 import javax.inject.Inject;
@@ -23,10 +24,10 @@ public class RestCountriesCountryRestApi extends CountryRestApiImpl {
     @Override
     protected ResponseAdapter<Collection<CountryEntity>> requestCountries() {
         try {
-            RestCountriesResponse response = restFramework.executeGet(RestCountriesResponse.class, BASE_URL, COUNTRY_ROUTE, noParameters());
+            RestCountriesCountryModel[] response = restFramework.executeGet(RestCountriesCountryModel[].class, BASE_URL, COUNTRY_ROUTE, noParameters());
             if (response == null)
                 throw new IOException("No data from server");
-            return new RestCountriesResponseAdapter(response);
+            return new RestCountriesResponseAdapter(Arrays.asList(response));
         } catch (IOException ioex) {
             return new RestCountriesResponseAdapter(ResponseAdapter.ResponseStatus.ERROR, ioex.getLocalizedMessage());
         }

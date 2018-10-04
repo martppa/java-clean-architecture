@@ -6,13 +6,14 @@ import com.martppa.java_clean_way.data.repository.datasource.provider.rest.respo
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
-public class RestCountriesResponseAdapter extends RestResponseAdapter<Collection<CountryEntity>, RestCountriesResponse> {
+public class RestCountriesResponseAdapter extends RestResponseAdapter<Collection<CountryEntity>, List<RestCountriesCountryModel>> {
 
     private ResponseAdapter.ResponseStatus responseStatus;
     private String errorMessage;
 
-    public RestCountriesResponseAdapter(RestCountriesResponse response) {
+    public RestCountriesResponseAdapter(List<RestCountriesCountryModel> response) {
         super(response);
         this.responseStatus = ResponseStatus.OK;
     }
