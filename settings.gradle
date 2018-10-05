@@ -1,2 +1,2 @@
-include ':app', ':core', ':ui', ':data', ':android', ':di', ':remote'
-include ':ios'
+include ':core', ':ui', ':data', ':android', ':android_data', ':iosapp_data'
+include ':iosapp'

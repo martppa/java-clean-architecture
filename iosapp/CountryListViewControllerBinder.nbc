@@ -1,0 +1,1 @@
+{"output":"src/main/java","platform":"iOS","bindings":[{"type":"header","name":"CountryTableViewController","objcClassGenerationMode":"Binding","headerPath":"xcode/iosapp","headerSearchPaths":[],"userHeaderSearchPaths":[],"frameworkSearchPaths":[],"packageBase":"com.martppa.java_clean_way.iosapp.views","importCode":"#import \"CountryTableViewController.h\""}]}

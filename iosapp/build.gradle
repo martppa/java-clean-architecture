@@ -1,0 +1,73 @@
+buildscript {
+    repositories {
+        jcenter()
+        mavenLocal()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        // Multi-OS Engine plugin
+        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '1.4.4'
+        classpath "net.ltgt.gradle:gradle-apt-plugin:0.18"
+    }
+}
+
+plugins {
+    id "net.ltgt.apt" version "0.18"
+}
+
+// Apply plugins
+apply plugin: 'eclipse'
+apply plugin: 'moe'
+apply plugin: 'net.ltgt.apt-idea'
+
+// Set source and target to Java 8
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
+
+// Set maven repository
+repositories {
+    jcenter()
+}
+
+// Exclude all files from Gradle's test runner
+test { exclude '**' }
+
+// Setup Multi-OS Engine
+moe {
+    xcode {
+        project 'xcode/iosapp.xcodeproj'
+        mainTarget 'iosapp'
+        testTarget 'iosapp-Test'
+
+        // Uncomment and change these settings if you are working with a Xcode workspace
+        // workspace 'xcode/iosapp.xcworkspace'
+        // mainScheme 'iosapp'
+        // testScheme 'iosapp-Test'
+    }
+}
+
+dependencies {
+    // Compile with 'jar' files in the project's 'lib' directory
+    compile fileTree(include: '*.jar', dir: 'lib')
+    implementation project(':core')
+    implementation project(':data')
+    implementation project(':ui')
+    implementation project(':iosapp_data')
+
+    implementation 'com.github.devjn:rxiosmoe:2.0.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+
+    implementation             "com.google.dagger:dagger:2.15"
+    annotationProcessor "com.google.dagger:dagger-compiler:2.15"
+}
+
+// Setup Eclipse
+eclipse {
+    // Set Multi-OS Engine nature
+    project {
+        natures 'org.multi-os-engine.project'
+    }
+}
