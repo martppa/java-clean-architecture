@@ -1,4 +1,4 @@
-package com.martppa.iosapp_data;
+package com.martppa.java_clean_way.android_data.remote;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;

@@ -5,7 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.martppa.java_clean_way.android.di.PerActivity;
 import com.martppa.java_clean_way.android.threading.MainExecutionThread;
-import com.martppa.java_clean_way.android_data.RestTemplateFramework;
+import com.martppa.java_clean_way.android_data.remote.RestTemplateFramework;
+import com.martppa.java_clean_way.android_data.remote.RetrofitRestFramework;
 import com.martppa.java_clean_way.core.repository.CountryRepository;
 import com.martppa.java_clean_way.core.threading.ObserverThreadExecutor;
 import com.martppa.java_clean_way.core.threading.SubscribedThreadExecutor;
@@ -77,8 +78,8 @@ public class MainModule {
     }
 
     @Provides
-    RestFramework provideRestFramework(RestTemplateFramework restTemplateFramework) {
-        return restTemplateFramework;
+    RestFramework provideRestFramework(RestTemplateFramework restFramework) { // <- Replace RestTemplateFramework with for example RetrofitRestFramework!
+        return restFramework;
     }
 
     @Provides

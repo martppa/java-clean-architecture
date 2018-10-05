@@ -1,4 +1,4 @@
-package com.martppa.java_clean_way.android_data;
+package com.martppa.java_clean_way.android_data.remote;
 
 import com.martppa.java_clean_way.data.repository.datasource.provider.rest.framework.RestFramework;
 
