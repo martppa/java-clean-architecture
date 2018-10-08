@@ -52,7 +52,7 @@ public class MainModule {
     }
 
     @Provides
-    CountryRestApi provideCountryRestApi(RestCountriesCountryRestApi countryRestApi) {
+    CountryRestApi provideCountryRestApi(GroupKtCountryRestApi countryRestApi) {
         return countryRestApi;
     }
 

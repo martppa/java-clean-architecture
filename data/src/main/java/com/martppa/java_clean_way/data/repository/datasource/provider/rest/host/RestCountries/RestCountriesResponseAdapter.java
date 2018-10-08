@@ -2,24 +2,23 @@ package com.martppa.java_clean_way.data.repository.datasource.provider.rest.host
 
 import com.martppa.java_clean_way.data.entities.CountryEntity;
 import com.martppa.java_clean_way.data.repository.datasource.provider.rest.response.ResponseAdapter;
-import com.martppa.java_clean_way.data.repository.datasource.provider.rest.response.RestResponseAdapter;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class RestCountriesResponseAdapter extends RestResponseAdapter<Collection<CountryEntity>, List<RestCountriesCountryModel>> {
+public class RestCountriesResponseAdapter implements ResponseAdapter<Collection<CountryEntity>> {
 
     private ResponseAdapter.ResponseStatus responseStatus;
     private String errorMessage;
+    private Collection<RestCountriesCountryModel> response;
 
-    public RestCountriesResponseAdapter(List<RestCountriesCountryModel> response) {
-        super(response);
+    public RestCountriesResponseAdapter(Collection<RestCountriesCountryModel> response) {
+        this.response = response;
         this.responseStatus = ResponseStatus.OK;
     }
 
     public RestCountriesResponseAdapter(ResponseStatus responseStatus, String errorMessage) {
-        super(null);
         this.responseStatus = responseStatus;
         this.errorMessage = errorMessage;
     }
