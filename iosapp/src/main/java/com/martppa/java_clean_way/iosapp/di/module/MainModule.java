@@ -6,11 +6,12 @@ import com.martppa.java_clean_way.core.threading.ObserverThreadExecutor;
 import com.martppa.java_clean_way.core.threading.SubscribedThreadExecutor;
 import com.martppa.java_clean_way.data.repository.CountryRepositoryImpl;
 import com.martppa.java_clean_way.data.repository.datasource.CountryDataSource;
-import com.martppa.java_clean_way.data.repository.datasource.Network.CountryNetworkDataSource;
+import com.martppa.java_clean_way.data.repository.datasource.network.CountryNetworkDataSource;
 import com.martppa.java_clean_way.data.repository.datasource.provider.CountryProvider;
 import com.martppa.java_clean_way.data.repository.datasource.provider.rest.country.CountryRestApi;
 import com.martppa.java_clean_way.data.repository.datasource.provider.rest.country.CountryRestProvider;
 import com.martppa.java_clean_way.data.repository.datasource.provider.rest.framework.RestFramework;
+import com.martppa.java_clean_way.data.repository.datasource.provider.rest.host.GroupKt.GroupKtCountryRestApi;
 import com.martppa.java_clean_way.data.repository.datasource.provider.rest.host.RestCountries.RestCountriesCountryRestApi;
 import com.martppa.java_clean_way.data.threading.JobExecutor;
 import com.martppa.java_clean_way.data.threading.WorkerExecutionThread;
@@ -51,8 +52,8 @@ public class MainModule {
     }
 
     @Provides
-    CountryRestApi provideCountryRestApi(RestCountriesCountryRestApi restCountriesCountryRestApi) {
-        return restCountriesCountryRestApi;
+    CountryRestApi provideCountryRestApi(RestCountriesCountryRestApi countryRestApi) {
+        return countryRestApi;
     }
 
     @Provides

@@ -2,7 +2,7 @@ package com.martppa.java_clean_way.data.repository;
 
 import com.martppa.java_clean_way.core.repository.CountryRepository;
 import com.martppa.java_clean_way.data.entities.mappers.CountryEntityMapper;
-import com.martppa.java_clean_way.data.repository.datasource.Factory.CountryDataSourceSimpleFactory;
+import com.martppa.java_clean_way.data.repository.datasource.factory.CountryDataSourceSimpleFactory;
 
 import javax.inject.Inject;
 
