@@ -1,4 +1,4 @@
-package com.martppa.java_clean_way.data.repository.datasource.Factory;
+package com.martppa.java_clean_way.data.repository.datasource.factory;
 
 import com.martppa.java_clean_way.data.repository.datasource.CountryDataSource;
 
