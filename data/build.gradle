@@ -3,6 +3,8 @@ apply plugin: 'java-library'
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "io.reactivex.rxjava2:rxjava:2.2.0"
+    implementation "junit:junit:4.12"
+    implementation 'org.mockito:mockito-core:2.15.0'
     compile group: 'javax.inject', name: 'javax.inject', version: '1'
     compile project(path: ':core')
 }

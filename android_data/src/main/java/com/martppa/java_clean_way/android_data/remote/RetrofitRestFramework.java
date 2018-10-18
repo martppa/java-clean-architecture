@@ -1,4 +1,21 @@
+/*
+ * Copyright 2018 Humberto Martín Dieppa, Open source project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.martppa.java_clean_way.android_data.remote;
+
+import android.annotation.SuppressLint;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
@@ -17,6 +34,10 @@ import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * Implementation of {@link RestFramework} in data module (data layer). This implementation
+ * handles Rest requests using <a href="https://square.github.io/retrofit/">Retrofit<a/> framework.
+ */
 public class RetrofitRestFramework implements RestFramework {
 
     @Inject public RetrofitRestFramework() {}
@@ -37,9 +58,11 @@ public class RetrofitRestFramework implements RestFramework {
         try {
             final TrustManager[] trustAllCerts = new TrustManager[]{
                     new X509TrustManager() {
+                        @SuppressLint("TrustAllX509TrustManager")
                         @Override
                         public void checkClientTrusted(java.security.cert.X509Certificate[] chain, String authType) {}
 
+                        @SuppressLint("TrustAllX509TrustManager")
                         @Override
                         public void checkServerTrusted(java.security.cert.X509Certificate[] chain, String authType) {}
 
