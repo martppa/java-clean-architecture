@@ -21,7 +21,7 @@ public class RestCountriesCountryModel implements CountryEntity {
         return alpha2Code;
     }
 
-    public String getFlagUrl() {
+    public String getFlagImageUrl() {
         return flag;
     }
 }

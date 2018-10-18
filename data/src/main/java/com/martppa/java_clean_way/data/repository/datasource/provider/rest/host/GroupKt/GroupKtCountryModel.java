@@ -44,7 +44,7 @@ public class GroupKtCountryModel implements CountryEntity {
     }
 
     @Override
-    public String getFlagUrl() {
+    public String getFlagImageUrl() {
         return ""; //There is no flag in this host
     }
 }

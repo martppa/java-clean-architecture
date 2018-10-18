@@ -5,6 +5,7 @@ import com.martppa.java_clean_way.data.entities.CountryEntity;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -14,11 +15,11 @@ public class CountryEntityMapper {
     public CountryEntityMapper() {}
 
     public Country transform(CountryEntity countryEntity) {
-        return new Country(countryEntity.getName(), countryEntity.getIsoCode(), countryEntity.getFlagUrl());
+        return new Country(countryEntity.getName(), countryEntity.getIsoCode(), countryEntity.getFlagImageUrl());
     }
 
-    public Collection<Country> transform(Collection<CountryEntity> countryEntities) {
-        Collection<Country> countries = new ArrayList<>();
+    public List<Country> transform(Collection<CountryEntity> countryEntities) {
+        List<Country> countries = new ArrayList<>();
         for (CountryEntity countryEntity : countryEntities) {
             countries.add(transform(countryEntity));
         }
