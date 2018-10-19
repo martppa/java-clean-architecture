@@ -16,15 +16,17 @@
 package com.martppa.java_clean_way.android.di.module;
 
 import android.app.Activity;
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 
-import com.martppa.java_clean_way.android.di.PerActivity;
 import com.martppa.java_clean_way.android.threading.MainExecutionThread;
+import com.martppa.java_clean_way.android_data.cache.country.CountryStoroCache;
 import com.martppa.java_clean_way.android_data.remote.RestTemplateFramework;
 import com.martppa.java_clean_way.core.repository.CountryRepository;
 import com.martppa.java_clean_way.core.threading.ObserverThreadExecutor;
 import com.martppa.java_clean_way.core.threading.SubscribedThreadExecutor;
 import com.martppa.java_clean_way.data.repository.CountryRepositoryImpl;
+import com.martppa.java_clean_way.data.repository.cache.Country.CountryCache;
 import com.martppa.java_clean_way.data.repository.datasource.CountryDataSource;
 import com.martppa.java_clean_way.data.repository.datasource.network.CountryNetworkDataSource;
 import com.martppa.java_clean_way.data.repository.datasource.provider.CountryProvider;
@@ -51,9 +53,13 @@ public class MainModule {
     }
 
     @Provides
-    @PerActivity
     Activity activity() {
         return this.appCompatActivity;
+    }
+
+    @Provides
+    Context provideContext(Activity activity) {
+        return activity;
     }
 
     @Provides
@@ -99,5 +105,10 @@ public class MainModule {
     @Provides
     Executor provideExecutor(JobExecutor jobExecutor) {
         return jobExecutor;
+    }
+
+    @Provides
+    CountryCache provideCache(CountryStoroCache cache) {
+        return cache;
     }
 }

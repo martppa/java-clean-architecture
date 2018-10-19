@@ -16,6 +16,7 @@
 package com.martppa.java_clean_way.data.repository.datasource.network;
 
 import com.martppa.java_clean_way.data.entities.CountryEntity;
+import com.martppa.java_clean_way.data.repository.cache.Country.CountryCache;
 import com.martppa.java_clean_way.data.repository.datasource.CountryDataSource;
 import com.martppa.java_clean_way.data.repository.datasource.provider.CountryProvider;
 
@@ -27,14 +28,20 @@ import io.reactivex.Observable;
 
 public class CountryNetworkDataSource implements CountryDataSource {
     private CountryProvider countryProvider;
+    private CountryCache cache;
 
     @Inject
-    public CountryNetworkDataSource(CountryProvider countryProvider) {
+    public CountryNetworkDataSource(CountryProvider countryProvider, CountryCache cache) {
         this.countryProvider = countryProvider;
+        this.cache = cache;
     }
 
     @Override
     public Observable<Collection<CountryEntity>> getCountries() {
-        return countryProvider.getCountries();
+        return countryProvider.getCountries().doOnNext(countryEntityCollection -> {
+            CountryEntity[] countryEntities = new CountryEntity[0];
+            countryEntities = countryEntityCollection.toArray(countryEntities);
+            cache.save(countryEntities);
+        });
     }
 }
