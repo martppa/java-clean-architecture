@@ -39,6 +39,8 @@ public class CountryStoroCache implements CountryCache {
 
     @Override
     public boolean hasExpired() {
+        if (!Storo.contains(COUNTRY_LIST_ID))
+            return true;
         return Storo.hasExpired(COUNTRY_LIST_ID).execute();
     }
 

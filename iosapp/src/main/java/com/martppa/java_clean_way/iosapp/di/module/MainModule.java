@@ -15,7 +15,7 @@
  */
 package com.martppa.java_clean_way.iosapp.di.module;
 
-import com.martppa.iosapp_data.cache.country.CountryEhCache;
+import com.martppa.iosapp_data.cache.country.CountryCustomCache;
 import com.martppa.iosapp_data.remote.RetrofitRestFramework;
 import com.martppa.java_clean_way.core.repository.CountryRepository;
 import com.martppa.java_clean_way.core.threading.ObserverThreadExecutor;
@@ -93,7 +93,7 @@ public class MainModule {
     }
 
     @Provides
-    CountryCache provideCache(CountryEhCache cache) {
+    CountryCache provideCache(CountryCustomCache cache) {
         return cache;
     }
 }
