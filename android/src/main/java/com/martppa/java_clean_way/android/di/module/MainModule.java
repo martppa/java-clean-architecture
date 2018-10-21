@@ -20,7 +20,7 @@ import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 
 import com.martppa.java_clean_way.android.threading.MainExecutionThread;
-import com.martppa.java_clean_way.android_data.cache.country.CountryStoroCache;
+import com.martppa.java_clean_way.android_data.cache.country.CountryCustomCache;
 import com.martppa.java_clean_way.android_data.remote.RestTemplateFramework;
 import com.martppa.java_clean_way.core.repository.CountryRepository;
 import com.martppa.java_clean_way.core.threading.ObserverThreadExecutor;
@@ -108,7 +108,7 @@ public class MainModule {
     }
 
     @Provides
-    CountryCache provideCache(CountryStoroCache cache) {
+    CountryCache provideCache(CountryCustomCache cache) {
         return cache;
     }
 }

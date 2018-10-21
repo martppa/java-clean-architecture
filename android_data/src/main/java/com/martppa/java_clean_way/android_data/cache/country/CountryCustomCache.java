@@ -18,39 +18,34 @@ package com.martppa.java_clean_way.android_data.cache.country;
 
 import android.content.Context;
 
+import com.martppa.java_clean_way.android_data.cache.CustomAndroidCache;
 import com.martppa.java_clean_way.data.entities.CountryEntity;
 import com.martppa.java_clean_way.data.repository.cache.Country.CountryCache;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-import st.lowlevel.storo.Storo;
-import st.lowlevel.storo.StoroBuilder;
-
 @Singleton
-public class CountryStoroCache implements CountryCache {
+public class CountryCustomCache implements CountryCache {
+    private CustomAndroidCache<CountryEntity[]> cache;
 
     @Inject
-    public CountryStoroCache(Context context) {
-        StoroBuilder.configure(5242880L)  // 5 mb
-                .setDefaultCacheDirectory(context)
-                .initialize();
+    public CountryCustomCache(Context context) {
+        cache = new CustomAndroidCache<>();
     }
 
     @Override
     public boolean hasExpired() {
-        if (!Storo.contains(COUNTRY_LIST_ID))
-            return true;
-        return Storo.hasExpired(COUNTRY_LIST_ID).execute();
+        return cache.hasExpired(COUNTRY_LIST_ID);
     }
 
     @Override
     public void save(CountryEntity[] countryEntities) {
-        Storo.put(COUNTRY_LIST_ID, countryEntities).execute();
+        cache.put(COUNTRY_LIST_ID, countryEntities);
     }
 
     @Override
     public CountryEntity[] get() {
-        return Storo.get(COUNTRY_LIST_ID, CountryEntity[].class).execute();
+        return cache.get(COUNTRY_LIST_ID);
     }
 }

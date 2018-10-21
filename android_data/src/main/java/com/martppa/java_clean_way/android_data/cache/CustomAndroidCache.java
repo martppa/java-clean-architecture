@@ -14,7 +14,7 @@
  *   limitations under the License.
  */
 
-package com.martppa.java_clean_way.iosapp_data.cache;
+package com.martppa.java_clean_way.android_data.cache;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -22,11 +22,11 @@ import java.util.Map;
 /**
  * Very Simple cache implementation
  */
-public class CustomCache<T> {
+public class CustomAndroidCache<T> {
     private Map<String, Element> cacheMap;
     private long cacheLifeTimeInMillis = 3600000; //1 hour
 
-    public CustomCache() {
+    public CustomAndroidCache() {
         cacheMap = new HashMap<>();
     }
 

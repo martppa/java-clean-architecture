@@ -16,7 +16,7 @@
 
 package com.martppa.java_clean_way.iosapp_data.cache.country;
 
-import com.martppa.java_clean_way.iosapp_data.cache.CustomCache;
+import com.martppa.java_clean_way.iosapp_data.cache.CustomMultiOSCache;
 import com.martppa.java_clean_way.data.entities.CountryEntity;
 import com.martppa.java_clean_way.data.repository.cache.Country.CountryCache;
 
@@ -25,11 +25,11 @@ import javax.inject.Singleton;
 
 @Singleton
 public class CountryCustomCache implements CountryCache {
-    private CustomCache<CountryEntity[]> cache;
+    private CustomMultiOSCache<CountryEntity[]> cache;
 
     @Inject
     public CountryCustomCache() {
-        cache = new CustomCache<>();
+        cache = new CustomMultiOSCache<>();
     }
 
     @Override
