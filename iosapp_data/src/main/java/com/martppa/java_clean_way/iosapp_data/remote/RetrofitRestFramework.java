@@ -13,7 +13,7 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-package com.martppa.iosapp_data.remote;
+package com.martppa.java_clean_way.iosapp_data.remote;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;

@@ -14,36 +14,44 @@
  *   limitations under the License.
  */
 
-package com.martppa.iosapp_data.cache.country;
+package com.martppa.java_clean_way.desktop_data.cache;
 
-import com.martppa.iosapp_data.cache.CustomCache;
 import com.martppa.java_clean_way.data.entities.CountryEntity;
 import com.martppa.java_clean_way.data.repository.cache.Country.CountryCache;
+
+import net.sf.ehcache.Cache;
+import net.sf.ehcache.CacheManager;
+import net.sf.ehcache.Element;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
 @Singleton
-public class CountryCustomCache implements CountryCache {
-    private CustomCache<CountryEntity[]> cache;
+public class CountryEhCache implements CountryCache {
+    private final Cache cache;
 
     @Inject
-    public CountryCustomCache() {
-        cache = new CustomCache<>();
+    public CountryEhCache() {
+        final CacheManager cacheManager = CacheManager.getInstance();
+        cacheManager.addCache(CACHE_ID);
+        cache = cacheManager.getCache(CACHE_ID);
     }
 
     @Override
     public boolean hasExpired() {
-        return cache.hasExpired(COUNTRY_LIST_ID);
+        Element element;
+        if ((element = cache.get(COUNTRY_LIST_ID)) == null)
+            return true;
+        return element.isExpired();
     }
 
     @Override
     public void save(CountryEntity[] countryEntities) {
-        cache.put(COUNTRY_LIST_ID, countryEntities);
+        cache.put(new Element(COUNTRY_LIST_ID, countryEntities));
     }
 
     @Override
     public CountryEntity[] get() {
-        return cache.get(COUNTRY_LIST_ID);
+        return (CountryEntity[]) cache.get(COUNTRY_LIST_ID).getObjectValue();
     }
 }

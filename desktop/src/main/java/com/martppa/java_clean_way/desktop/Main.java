@@ -13,18 +13,31 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-package com.martppa.iosapp_data.remote;
 
-import com.google.gson.JsonElement;
+package com.martppa.java_clean_way.desktop;
 
-import java.util.Map;
+import com.martppa.java_clean_way.desktop.views.CountryListPanel;
 
-import retrofit2.Call;
-import retrofit2.http.GET;
-import retrofit2.http.QueryMap;
-import retrofit2.http.Url;
+import javax.swing.*;
 
-public interface RetrofitApiInterface {
-    @GET
-    Call<JsonElement> executeGet(@Url String url, @QueryMap Map<String, String> params);
+public class Main {
+    private JFrame mainFrame;
+    private CountryListPanel countryListPanel;
+
+    private Main() {
+        countryListPanel = new CountryListPanel();
+        mainFrame = new JFrame("Java Clean Way");
+        mainFrame.setSize(800, 600);
+        mainFrame.setContentPane(countryListPanel);
+        showWindow();
+    }
+
+    private void showWindow() {
+        mainFrame.setVisible(true);
+        countryListPanel.viewDisplayed();
+    }
+
+    public static void main(String[] args) {
+        new Main();
+    }
 }

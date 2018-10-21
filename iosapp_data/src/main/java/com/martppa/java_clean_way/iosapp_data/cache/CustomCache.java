@@ -14,7 +14,7 @@
  *   limitations under the License.
  */
 
-package com.martppa.iosapp_data.cache;
+package com.martppa.java_clean_way.iosapp_data.cache;
 
 import java.util.HashMap;
 import java.util.Map;

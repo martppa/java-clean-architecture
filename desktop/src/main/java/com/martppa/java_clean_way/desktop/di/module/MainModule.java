@@ -1,22 +1,22 @@
 /*
- * Copyright 2018 Humberto Martín Dieppa, Open source project
+ *   Copyright (c) 2018 Humberto Martín Dieppa, Open source project
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *       http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
  */
-package com.martppa.java_clean_way.iosapp.di.module;
+package com.martppa.java_clean_way.desktop.di.module;
 
-import com.martppa.java_clean_way.iosapp_data.cache.country.CountryCustomCache;
-import com.martppa.java_clean_way.iosapp_data.remote.RetrofitRestFramework;
+import com.martppa.java_clean_way.desktop_data.cache.CountryEhCache;
+import com.martppa.java_clean_way.desktop_data.remote.RetrofitRestFramework;
 import com.martppa.java_clean_way.core.repository.CountryRepository;
 import com.martppa.java_clean_way.core.threading.ObserverThreadExecutor;
 import com.martppa.java_clean_way.core.threading.SubscribedThreadExecutor;
@@ -31,11 +31,13 @@ import com.martppa.java_clean_way.data.repository.datasource.provider.rest.frame
 import com.martppa.java_clean_way.data.repository.datasource.provider.rest.host.RestCountries.RestCountriesCountryRestApi;
 import com.martppa.java_clean_way.data.threading.JobExecutor;
 import com.martppa.java_clean_way.data.threading.WorkerExecutionThread;
-import com.martppa.java_clean_way.iosapp.threading.MainExecutionThread;
+import com.martppa.java_clean_way.desktop.threading.MainExecutionThread;
 import com.martppa.java_clean_way.ui.presenter.country.CountryListPresenter;
 import com.martppa.java_clean_way.ui.presenter.country.CountryListPresenterImpl;
 
 import java.util.concurrent.Executor;
+
+import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
@@ -77,6 +79,7 @@ public class MainModule {
         return workerExecutionThread;
     }
 
+    @Singleton
     @Provides
     ObserverThreadExecutor provideObserverThreadExecutor(MainExecutionThread mainExecutionThread) {
         return mainExecutionThread;
@@ -93,7 +96,7 @@ public class MainModule {
     }
 
     @Provides
-    CountryCache provideCache(CountryCustomCache cache) {
+    CountryCache provideCache(CountryEhCache cache) {
         return cache;
     }
 }
