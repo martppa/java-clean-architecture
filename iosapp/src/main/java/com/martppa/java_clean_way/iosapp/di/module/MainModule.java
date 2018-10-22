@@ -15,18 +15,19 @@
  */
 package com.martppa.java_clean_way.iosapp.di.module;
 
-import com.martppa.iosapp_data.RetrofitRestFramework;
+import com.martppa.java_clean_way.iosapp_data.cache.country.CountryCustomCache;
+import com.martppa.java_clean_way.iosapp_data.remote.RetrofitRestFramework;
 import com.martppa.java_clean_way.core.repository.CountryRepository;
 import com.martppa.java_clean_way.core.threading.ObserverThreadExecutor;
 import com.martppa.java_clean_way.core.threading.SubscribedThreadExecutor;
 import com.martppa.java_clean_way.data.repository.CountryRepositoryImpl;
+import com.martppa.java_clean_way.data.repository.cache.Country.CountryCache;
 import com.martppa.java_clean_way.data.repository.datasource.CountryDataSource;
 import com.martppa.java_clean_way.data.repository.datasource.network.CountryNetworkDataSource;
 import com.martppa.java_clean_way.data.repository.datasource.provider.CountryProvider;
 import com.martppa.java_clean_way.data.repository.datasource.provider.rest.country.CountryRestApi;
 import com.martppa.java_clean_way.data.repository.datasource.provider.rest.country.CountryRestProvider;
 import com.martppa.java_clean_way.data.repository.datasource.provider.rest.framework.RestFramework;
-import com.martppa.java_clean_way.data.repository.datasource.provider.rest.host.GroupKt.GroupKtCountryRestApi;
 import com.martppa.java_clean_way.data.repository.datasource.provider.rest.host.RestCountries.RestCountriesCountryRestApi;
 import com.martppa.java_clean_way.data.threading.JobExecutor;
 import com.martppa.java_clean_way.data.threading.WorkerExecutionThread;
@@ -67,7 +68,7 @@ public class MainModule {
     }
 
     @Provides
-    CountryRestApi provideCountryRestApi(GroupKtCountryRestApi countryRestApi) { // <- replace the rest Api to swap between hosts
+    CountryRestApi provideCountryRestApi(RestCountriesCountryRestApi countryRestApi) { // <- replace the rest Api to swap between hosts
         return countryRestApi;
     }
 
@@ -89,5 +90,10 @@ public class MainModule {
     @Provides
     Executor provideExecutor(JobExecutor jobExecutor) {
         return jobExecutor;
+    }
+
+    @Provides
+    CountryCache provideCache(CountryCustomCache cache) {
+        return cache;
     }
 }

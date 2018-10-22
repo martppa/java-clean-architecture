@@ -15,20 +15,27 @@
  */
 package com.martppa.java_clean_way.data.repository.datasource.factory;
 
+import com.martppa.java_clean_way.data.repository.datasource.cache.CountryCacheDataSource;
 import com.martppa.java_clean_way.data.repository.datasource.CountryDataSource;
+import com.martppa.java_clean_way.data.repository.datasource.network.CountryNetworkDataSource;
 
 import javax.inject.Inject;
 
 public class CountryDataSourceSimpleFactory {
-    private CountryDataSource countryCloudDataSource;
+    private CountryNetworkDataSource countryNetworkDataSource;
+    private CountryCacheDataSource countryCacheDataSource;
 
     @Inject
-    public CountryDataSourceSimpleFactory(CountryDataSource countryCloudDataSource) {
-        this.countryCloudDataSource = countryCloudDataSource;
+    public CountryDataSourceSimpleFactory(CountryNetworkDataSource countryNetworkDataSource,
+                                          CountryCacheDataSource countryCacheDataSource) {
+        this.countryNetworkDataSource = countryNetworkDataSource;
+        this.countryCacheDataSource = countryCacheDataSource;
     }
 
     public CountryDataSource build() {
-        //Todo: Check cache
-        return countryCloudDataSource;
+        if (countryCacheDataSource.isExpired())
+            return countryNetworkDataSource;
+        else
+            return countryCacheDataSource;
     }
 }
