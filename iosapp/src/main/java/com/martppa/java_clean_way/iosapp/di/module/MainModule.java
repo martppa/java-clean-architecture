@@ -21,7 +21,7 @@ import com.martppa.java_clean_way.core.repository.CountryRepository;
 import com.martppa.java_clean_way.core.threading.ObserverThreadExecutor;
 import com.martppa.java_clean_way.core.threading.SubscribedThreadExecutor;
 import com.martppa.java_clean_way.data.repository.CountryRepositoryImpl;
-import com.martppa.java_clean_way.data.repository.cache.Country.CountryCache;
+import com.martppa.java_clean_way.data.repository.cache.country.CountryCache;
 import com.martppa.java_clean_way.data.repository.datasource.CountryDataSource;
 import com.martppa.java_clean_way.data.repository.datasource.network.CountryNetworkDataSource;
 import com.martppa.java_clean_way.data.repository.datasource.provider.CountryProvider;

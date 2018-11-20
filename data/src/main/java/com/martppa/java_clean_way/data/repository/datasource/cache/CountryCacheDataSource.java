@@ -17,7 +17,7 @@
 package com.martppa.java_clean_way.data.repository.datasource.cache;
 
 import com.martppa.java_clean_way.data.entities.CountryEntity;
-import com.martppa.java_clean_way.data.repository.cache.Country.CountryCache;
+import com.martppa.java_clean_way.data.repository.cache.country.CountryCache;
 import com.martppa.java_clean_way.data.repository.datasource.CountryDataSource;
 
 import java.util.Arrays;

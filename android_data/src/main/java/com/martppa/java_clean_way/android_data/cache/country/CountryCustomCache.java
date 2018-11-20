@@ -20,7 +20,7 @@ import android.content.Context;
 
 import com.martppa.java_clean_way.android_data.cache.CustomAndroidCache;
 import com.martppa.java_clean_way.data.entities.CountryEntity;
-import com.martppa.java_clean_way.data.repository.cache.Country.CountryCache;
+import com.martppa.java_clean_way.data.repository.cache.country.CountryCache;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;

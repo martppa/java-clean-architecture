@@ -14,7 +14,7 @@
  *   limitations under the License.
  */
 
-package com.martppa.java_clean_way.data.repository.cache.Country;
+package com.martppa.java_clean_way.data.repository.cache.country;
 
 import com.martppa.java_clean_way.data.entities.CountryEntity;
 

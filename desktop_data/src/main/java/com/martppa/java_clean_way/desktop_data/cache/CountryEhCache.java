@@ -17,7 +17,7 @@
 package com.martppa.java_clean_way.desktop_data.cache;
 
 import com.martppa.java_clean_way.data.entities.CountryEntity;
-import com.martppa.java_clean_way.data.repository.cache.Country.CountryCache;
+import com.martppa.java_clean_way.data.repository.cache.country.CountryCache;
 
 import net.sf.ehcache.Cache;
 import net.sf.ehcache.CacheManager;
