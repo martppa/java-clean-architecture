@@ -40,7 +40,7 @@ public abstract class CountryRestApiImpl implements CountryRestApi {
     public Observable<Collection<CountryEntity>> getCountries() {
         return Observable.create(emitter -> {
             ResponseAdapter<Collection<CountryEntity>> responseAdapter = requestCountries();
-            AssertRequestWasSuccessful(responseAdapter);
+            assertRequestWasSuccessful(responseAdapter);
             emitter.onNext(responseAdapter.getContent());
             emitter.onComplete();
         });
@@ -48,7 +48,7 @@ public abstract class CountryRestApiImpl implements CountryRestApi {
 
     protected abstract ResponseAdapter<Collection<CountryEntity>> requestCountries();
 
-    private void AssertRequestWasSuccessful(ResponseAdapter responseAdapter) throws IOException {
+    private void assertRequestWasSuccessful(ResponseAdapter responseAdapter) throws IOException {
         if (responseAdapter.getStatus() != ResponseAdapter.ResponseStatus.OK)
             throw new IOException("Unable to request: " + responseAdapter.getErrorMessage());
     }
